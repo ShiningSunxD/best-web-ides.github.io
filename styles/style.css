@@ -7,6 +7,7 @@
     top: -100px;
     transition: all 1s ease;
     color:#424746;
+    z-index: 1;
 }
 
 #row.fixed{
@@ -82,19 +83,5 @@ aside{
     padding-left: 2rem;
 }
 
-.video{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-}
-.video iframe{
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width:100%;
-}
 
 
