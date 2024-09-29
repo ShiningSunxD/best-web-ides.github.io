@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    fill_navigation();
+    fill_navigation(); // функкция для заполнения сайдбара
     sticky_header();   
 }
 
@@ -15,14 +15,24 @@ function fill_navigation(){
     let random_id = "random_id_";
     let random_id_enum = 1;
 
+    // каждому хедеру в main'е задаю уникальный id
+    // чтобы сайдбар мог на них скроллить страницу
+
+
     for (let h1 of h1_list){
+
+        // задаю рандомный id
         random_id = random_id + random_id_enum++; 
         h1.setAttribute("id", random_id);
 
         let a = document.createElement("a");
         let br = document.createElement("br");
+
+
         a.setAttribute("href", "#" + random_id);
         a.textContent = h1.textContent;
+
+
         aside.appendChild(a);
         aside.appendChild(br);
     }
@@ -33,11 +43,14 @@ function sticky_header(){
     let main = document.getElementById("main");
     let row = document.getElementById("row");
     let h = main.offsetTop;
+
+
     let aside = document.getElementById("aside");
     aside.style.top = row.clientHeight + 50 + "px";
 
 
-
+    // если экран скроллится ниже хедера,
+    // то ему ставится position: fixed
     document.onscroll = function () {
 
         let scroll = window.scrollY;
